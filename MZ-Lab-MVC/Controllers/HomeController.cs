@@ -12,11 +12,11 @@ namespace MZ_Lab_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private MZLabDbContext _context;
+        private MZLabDbContext db;
 
         public HomeController(MZLabDbContext context)
         {
-            _context = context;
+            db = context;
         }
 
         public IActionResult Index()
@@ -33,9 +33,20 @@ namespace MZ_Lab_MVC.Controllers
 
         public IActionResult Academics()
         {
+            var academicArticles = db.AcademicArticles.ToList();
+            IList<string> yearOfAcademicArticle = new List<string>();
+
+            foreach (var academicArticle in academicArticles)
+            {
+                if(!yearOfAcademicArticle.Contains(academicArticle.PostTime.Year.ToString()))
+                {
+                    yearOfAcademicArticle.Add(academicArticle.PostTime.Year.ToString());
+                }
+            }
             var academicsVM = new AcademicsViewModel()
             {
-                AcademicArticles = _context.AcademicArticles.ToList()
+                AcademicArticles = db.AcademicArticles.ToList(),
+                YearOfAcademicArticles = yearOfAcademicArticle
             };
             return View(academicsVM);
         }

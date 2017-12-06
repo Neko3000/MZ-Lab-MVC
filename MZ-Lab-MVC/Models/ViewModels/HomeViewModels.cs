@@ -9,5 +9,6 @@ namespace MZ_Lab_MVC.ViewModels
     public class AcademicsViewModel
     {
         public IEnumerable<AcademicArticle> AcademicArticles { get; set; }
+        public IEnumerable<string> YearOfAcademicArticles { get; set; }
     }
 }
