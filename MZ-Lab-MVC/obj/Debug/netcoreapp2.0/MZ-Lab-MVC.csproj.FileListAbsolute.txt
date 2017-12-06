@@ -1,0 +1,12 @@
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\bin\Debug\netcoreapp2.0\MZ-Lab-MVC.deps.json
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\bin\Debug\netcoreapp2.0\MZ-Lab-MVC.runtimeconfig.json
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\bin\Debug\netcoreapp2.0\MZ-Lab-MVC.runtimeconfig.dev.json
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\bin\Debug\netcoreapp2.0\MZ-Lab-MVC.dll
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.csprojResolveAssemblyReference.cache
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.csproj.CoreCompileInputs.cache
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.AssemblyInfoInputs.cache
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.AssemblyInfo.cs
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\bin\Debug\netcoreapp2.0\MZ-Lab-MVC.pdb
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.dll
+H:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.pdb

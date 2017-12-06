@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HomePage</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/font-awesome/dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/less/style.css">
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="main-navbar">
+        <div class="navbar-visiable-area">
+            <div class="navbar-header">
+                <img src="img/compass-header.png" alt="">
+            </div>
+            <div class="navbar-splitter"></div>
+            <div class="navbar-body">
+                <ul>
+                    <li class="padding-left-30px padding-right-15px"><a href="@Url.Action("Index","Home")"><i class="margin-right-10px fa fa-home"></i>ホームページ</a></li>
+                    <li class="padding-left-30px padding-right-15px"><a href="@Url.Action("Member","Home")"><i class="margin-right-10px fa fa-id-card"></i>成員構成</a></li>
+                    <li class="padding-left-30px padding-right-15px"><a href="@Url.Action("Academics","Home")"><i class="margin-right-10px fa fa-cube"></i>研究実績</a></li>
+                    <li class="padding-left-30px padding-right-15px"><a href="@Url.Action("Contact","Home")"><i class="margin-right-10px fa fa-map-marker"></i>アクセス</a></li>
+                </ul>
+            </div>
+            <div class="navbar-footer">
+                <div type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-invisiable-area">
+                    <img src="img/toggler.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-invisiable-area">
+            <ul>
+                <li class="text-center"><a href="index.html"><i class="margin-right-10px fa fa-home"></i>ホームページ</a></li>
+                <li class="text-center"><a href="member.html"><i class="margin-right-10px fa fa-id-card"></i>成員構成</a></li>
+                <li class="text-center"><a href="academics.html"><i class="margin-right-10px fa fa-cube"></i>研究実績</a></li>
+                <li class="text-center"><a href="contact.html"><i class="margin-right-10px fa fa-map-marker"></i>アクセス</a></li>
+            </ul>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <footer class="main-footer padding-vertical-30px">
+        <div class="center-container padding-vertical-15px">
+            <img src="img/compass-chain.png" alt="" class="center-object">
+        </div>
+        <div class="margin-top-15px padding-vertical-15px">
+            <div class="center-container">
+                <span class="center-object">Offical webSite. 静岡大学 情報学部 <strong>宮崎研究室</strong></span>
+            </div>
+            <div class="center-container">
+                <small class="center-object">Mail - MiyazakiLab@xmail.com</small>
+            </div>
+        </div>
+        <div class="center-container padding-vertical-15px">
+            <small class="center-object">このウェブサイトが永遠に落ちないように<strong>稲荷様</strong>に祈っています。</small>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

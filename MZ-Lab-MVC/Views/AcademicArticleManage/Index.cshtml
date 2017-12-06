@@ -1,0 +1,107 @@
+﻿@model IEnumerable<MZ_Lab_MVC.Models.AcademicArticle>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutBracket.cshtml";
+}
+
+<div class="pageheader">
+    <h2><i class="fa fa-edit"></i> AcademicArticleManage<span>Manage your AcademicArticle here.</span></h2>
+    <div class="breadcrumb-wrapper">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index","SystemManage")">Background</a></li>
+            <li>AcademicArticle</li>
+            <li class="active">AcademicArticle List</li>
+        </ol>
+    </div>
+</div>
+<div class="contentpanel">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="subtitle mb5">Article List</h5>
+            <p class="mb5">Checking my articles and update them.</p>
+            <a class="btn btn-primary btn-xs mb10" href="@Url.Action("Create","AcademicArticleManage")">New</a>
+            <div class="table-responsive">
+                <table class="table table-hidaction table-hover mb30">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>PostTime</th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Title</td>
+                                <td>@item.PostTime</td>
+                                <td class="table-action-hide">
+                                    <a href="@Url.Action("Details","AcademicArticleManage",new { id=item.Id })">
+                                        <i class="fa fa-file-text-o"></i>
+                                    </a>
+                                    <a href="@Url.Action("Edit","AcademicArticleManage",new { id=item.Id })">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="@Url.Action("Delete","AcademicArticleManage",new { id=item.Id })">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><!-- contentpanel -->
+@section scripts{
+
+    <script src="~/bracket/js/jquery.datatables.min.js"></script>
+
+    <script>
+
+
+        jQuery(document).ready(function () {
+
+            "use strict";
+
+            jQuery('#table1').dataTable();
+
+            jQuery('#table2').dataTable({
+                "sPaginationType": "full_numbers"
+            });
+
+            // Select2
+            jQuery('select').select2({
+                minimumResultsForSearch: -1
+            });
+
+            jQuery('select').removeClass('form-control');
+
+            // Delete row in a table
+            jQuery('.delete-row').click(function () {
+                var c = confirm("Continue delete?");
+                if (c)
+                    jQuery(this).closest('tr').fadeOut(function () {
+                        jQuery(this).remove();
+                    });
+
+                return false;
+            });
+
+            // Show aciton upon row hover
+            jQuery('.table-hidaction tbody tr').hover(function () {
+                jQuery(this).find('.table-action-hide a').animate({ opacity: 1 });
+            }, function () {
+                jQuery(this).find('.table-action-hide a').animate({ opacity: 0 });
+            });
+
+
+        });
+    </script>
+}
+
