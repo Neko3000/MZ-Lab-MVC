@@ -11,7 +11,14 @@ namespace MZ_Lab_MVC.Models
         [Key]
         public int Id { get; set; }
         public string Title { get; set; }
+        public string Title_EN { get; set; }
         public string CoverImgUrl { get; set; }
         public DateTime PostTime { get; set; }
+
+        public string EventName { get; set; }
+        public string EventPlace { get; set; }
+        public string BookInfo { get; set; }
+
+        public string Editors { get; set; }
     }
 }

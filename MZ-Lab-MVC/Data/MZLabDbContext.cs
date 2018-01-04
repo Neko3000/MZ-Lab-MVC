@@ -14,5 +14,6 @@ namespace MZ_Lab_MVC.Data
         }
 
         public DbSet<MZ_Lab_MVC.Models.AcademicArticle> AcademicArticles { get; set; }
+        public DbSet<MZ_Lab_MVC.Models.Member> Members { get; set; }
     }
 }

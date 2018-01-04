@@ -10,9 +10,10 @@ using System;
 namespace MZ_Lab_MVC.Migrations
 {
     [DbContext(typeof(MZLabDbContext))]
-    partial class MZLabDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180103074120_AddMemberClass")]
+    partial class AddMemberClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,8 +27,6 @@ namespace MZ_Lab_MVC.Migrations
                     b.Property<string>("BookInfo");
 
                     b.Property<string>("CoverImgUrl");
-
-                    b.Property<string>("Editors");
 
                     b.Property<string>("EventName");
 
@@ -48,6 +47,8 @@ namespace MZ_Lab_MVC.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("AcademicArticleId");
 
                     b.Property<string>("AvatarUrl");
 
@@ -71,7 +72,16 @@ namespace MZ_Lab_MVC.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AcademicArticleId");
+
                     b.ToTable("Members");
+                });
+
+            modelBuilder.Entity("MZ_Lab_MVC.Models.Member", b =>
+                {
+                    b.HasOne("MZ_Lab_MVC.Models.AcademicArticle")
+                        .WithMany("Editors")
+                        .HasForeignKey("AcademicArticleId");
                 });
 #pragma warning restore 612, 618
         }

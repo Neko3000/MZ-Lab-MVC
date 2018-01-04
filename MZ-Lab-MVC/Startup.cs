@@ -30,7 +30,7 @@ namespace MZ_Lab_MVC
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<MZLabDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MZLabDbConnection")));
+                options.UseMySQL(Configuration.GetConnectionString("MZLabDbConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

@@ -10,9 +10,10 @@ using System;
 namespace MZ_Lab_MVC.Migrations
 {
     [DbContext(typeof(MZLabDbContext))]
-    partial class MZLabDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180103080933_DropRelationShip")]
+    partial class DropRelationShip
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
