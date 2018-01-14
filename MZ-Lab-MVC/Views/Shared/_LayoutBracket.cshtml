@@ -76,11 +76,17 @@
                     </li>
                     @* should rewrite it to support controllers *@
                     <li class="nav-parent @Html.IsActiveForController("ArticleManage")">
-                        <a href=""><i class="fa fa-newspaper-o"></i> <span>Article</span></a>
+                        <a href=""><i class="fa fa-newspaper-o"></i> <span>文章</span></a>
                         <ul class="children">
-                            <li class="@Html.IsActive("ArticleManage","Index")"><a href="@Url.Action("Index","ArticleManage")"><i class="fa fa-caret-right"></i> Article Manage</a></li>
-                            <li class="@Html.IsActive("ArticleCategoryManage","Index")"><a href="@Url.Action("Index","ArticleCategoryManage")"><i class="fa fa-caret-right"></i> ArticleCategory Manage</a></li>
+                            <li class="@Html.IsActive("ArticleManage","Index")"><a href="@Url.Action("Index","ArticleManage")"><i class="fa fa-caret-right"></i> 文章管理</a></li>
                         </ul>
+                    </li>
+
+                    <li class="nav-parent @Html.IsActiveForController("MemeberManage")">
+                        <a href=""><i class="fa fa-address-card"></i> <span>成員</span></a>
+                        <ul class="children">
+                            <li class="@Html.IsActive("MemberManage","Index")"><a href="@Url.Action("Index","MemberManage")"><i class="fa fa-caret-right"></i> 成員管理</a></li>
+                        </ul>　
                     </li>
                 </ul>
 

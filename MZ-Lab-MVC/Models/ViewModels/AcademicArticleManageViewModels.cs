@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using MZ_Lab_MVC.Models;
 
 namespace MZ_Lab_MVC.ViewModels
 {
@@ -52,5 +53,10 @@ namespace MZ_Lab_MVC.ViewModels
         public string CoverImgUrl { get; set; }
         [Display(Name = "PostTime")]
         public DateTime PostTime { get; set; }
+    }
+
+    public class AcademicArticleIndexViewModel
+    {
+        public IEnumerable<AcademicArticle> AcademicArticles { get; set; }
     }
 }

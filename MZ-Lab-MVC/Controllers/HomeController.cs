@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using MZ_Lab_MVC.Models;
 using MZ_Lab_MVC.Data;
 using MZ_Lab_MVC.ViewModels;
+using X.PagedList;
 
 namespace MZ_Lab_MVC.Controllers
 {
@@ -31,22 +32,33 @@ namespace MZ_Lab_MVC.Controllers
             return View();
         }
 
-        public IActionResult Academics()
+        public IActionResult Academics(int? page)
         {
             var academicArticles = db.AcademicArticles.ToList();
+            var pageSize = 8;
+            var pageNumber = page ?? 1;
+            var singlePageModels = academicArticles.ToPagedList(pageNumber, pageSize);
+            var totalPageNumber = (academicArticles.Count - 1) / pageSize + 1;
+
             IList<string> yearOfAcademicArticle = new List<string>();
 
-            foreach (var academicArticle in academicArticles)
+            foreach (var academicArticle in singlePageModels)
             {
                 if(!yearOfAcademicArticle.Contains(academicArticle.PostTime.Year.ToString()))
                 {
                     yearOfAcademicArticle.Add(academicArticle.PostTime.Year.ToString());
                 }
             }
+
             var academicsVM = new AcademicsViewModel()
             {
-                AcademicArticles = db.AcademicArticles.ToList(),
-                YearOfAcademicArticles = yearOfAcademicArticle
+                AcademicArticles = singlePageModels,
+                YearOfAcademicArticles = yearOfAcademicArticle,
+                Pager = new PagePartialViewModel
+                {
+                    CurrentPage = pageNumber,
+                    TotalPage = totalPageNumber
+                }
             };
             return View(academicsVM);
         }

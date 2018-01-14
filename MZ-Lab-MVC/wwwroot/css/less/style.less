@@ -444,6 +444,28 @@
     }
 }
 
+.mpager {
+    ul {
+        > li {
+            > a {
+                color: @Medium-Grey-Hover;
+            }
+        }
+    }
+
+    .active {
+        a {
+            background-color: @Medium-Grey-Hover;
+            border: @Medium-Grey-Hover solid 1px;
+
+            &:hover {
+                background-color: @Deep-Grey-Origin;
+                border: @Deep-Grey-Origin solid 1px;
+            }
+        }
+    }
+}
+
 //page-contact
 .contact-card-area{
     background-color: @Light-Grey-Origin;

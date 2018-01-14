@@ -1,0 +1,144 @@
+﻿@model MZ_Lab_MVC.ViewModels.MemberDetailViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_LayoutBracket.cshtml";
+}
+
+<div class="pageheader">
+    <h2><i class="fa fa-edit"></i> MemberManage<span>メンバーを管理する.</span></h2>
+    <div class="breadcrumb-wrapper">
+        <span class="label">You are here:</span>
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index","SystemManage")">Background</a></li>
+            <li><a href="@Url.Action("Index","MemberManage")">MemberManage</a></li>
+            <li class="active">Details</li>
+        </ol>
+    </div>
+</div>
+
+<div class="contentpanel">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-btns">
+                <a class="panel-close"></a>
+                <a class="minimize"></a>
+            </div>
+            <h4 class="panel-title">AcademicArticle</h4>
+            <p>メンバーの情報を確認する.</p>
+        </div>
+
+        <div class="panel-body panel-body-nopadding">
+            <div class="form-horizontal form-bordered">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Id, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FamilyName, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.FamilyName, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.GivenName, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.GivenName, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FamilyNamePronunciation, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.FamilyNamePronunciation, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.GivenNamePronunciation, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.GivenNamePronunciation, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AvatarUrl, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.AvatarUrl, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Major, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Major, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Grade, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Grade, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>                     
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Introduction, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Introduction, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Email, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Remark, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <a class="btn btn-default" href="@Url.Action("Index","MemberManage")">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- contentpanel -->

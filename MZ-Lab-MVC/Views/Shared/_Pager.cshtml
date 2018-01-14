@@ -1,0 +1,29 @@
+﻿@model MZ_Lab_MVC.ViewModels.PagePartialViewModel
+
+
+<div class="row center-container">
+    <div class="center-object">
+        <nav aria-label="Page navigation" class="mpager">
+            <ul class="pagination">
+                <li class="page-item @(Model.CurrentPage-2>=1?"":"transparent-object")">
+                    <a class="page-link" href="@Url.Action("Academics", "Home", new { @page = Model.CurrentPage - 4 >= 1 ? Model.CurrentPage - 4 : 1 })" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="page-item @(Model.CurrentPage-2>=1?"":"transparent-object")"><a class="page-link" href="@Url.Action("Academics","Home",new { @page=Model.CurrentPage-2 })">@(Model.CurrentPage-2)</a></li>
+                <li class="page-item @(Model.CurrentPage-1>=1?"":"transparent-object")"><a class="page-link" href="@Url.Action("Academics","Home",new { @page=Model.CurrentPage-1 })">@(Model.CurrentPage - 1)</a></li>
+                <li class="page-item active"><a class="page-link" href="#">@Model.CurrentPage</a></li>
+                <li class="page-item @(Model.CurrentPage+1<=Model.TotalPage?"":"transparent-object")"><a class="page-link" href="@Url.Action("Academics","Home",new { @page=Model.CurrentPage+1 })">@(Model.CurrentPage + 1)</a></li>
+                <li class="page-item @(Model.CurrentPage+2<=Model.TotalPage?"":"transparent-object")"><a class="page-link" href="@Url.Action("Academics","Home",new { @page=Model.CurrentPage+2 })">@(Model.CurrentPage + 2)</a></li>
+
+                <li class="page-item @(Model.CurrentPage+2<=Model.TotalPage?"":"transparent-object")")">
+                    <a class="page-link" href="@Url.Action("Academics","Home",new { @page=Model.CurrentPage + 4 <=Model.TotalPage ? Model.CurrentPage + 4 : Model.TotalPage })" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

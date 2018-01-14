@@ -65,6 +65,12 @@ small {
   display: inline-block;
   border-radius: 50%;
 }
+.transparent-object {
+  opacity: 0;
+}
+.transparent-object a {
+  pointer-events: none;
+}
 .padding-top-5px {
   padding-top: 5px;
 }
@@ -645,6 +651,17 @@ pre {
 }
 .academic-card-area .single-academic-card .single-academic-card-footer big {
   color: #a4a4a4;
+}
+.mpager ul > li > a {
+  color: #a4a4a4;
+}
+.mpager .active a {
+  background-color: #a4a4a4;
+  border: #a4a4a4 solid 1px;
+}
+.mpager .active a:hover {
+  background-color: #4f4f4f;
+  border: #4f4f4f solid 1px;
 }
 .contact-card-area {
   background-color: #f8f8f8;

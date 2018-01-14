@@ -7,6 +7,7 @@ using MZ_Lab_MVC.Data;
 using MZ_Lab_MVC.Models;
 using MZ_Lab_MVC.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,9 +23,19 @@ namespace MZ_Lab_MVC.Controllers
             db = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
-            return View(db.AcademicArticles.ToList());
+            var academicArticles = db.AcademicArticles.ToList();
+            var pageSize = 10;
+            var pageNumber = page ?? 1;
+            var singlePageModels = academicArticles.ToPagedList(pageNumber, pageSize);
+            var totalPageNumber = (academicArticles.Count - 1) / pageSize + 1;
+
+            var vm = new AcademicArticleIndexViewModel()
+            {
+                AcademicArticles = singlePageModels
+            };
+            return View(vm);
         }
 
         public IActionResult Details(int? id)

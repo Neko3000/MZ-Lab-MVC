@@ -20,5 +20,5 @@ G:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ
 G:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.AssemblyInfo.cs
 G:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.dll
 G:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.pdb
-G:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 G:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\MZ-Lab-MVC.csprojResolveAssemblyReference.cache
+G:\VisualStudioProjects\ASP.NET\MZ-Lab-MVC\MZ-Lab-MVC\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
