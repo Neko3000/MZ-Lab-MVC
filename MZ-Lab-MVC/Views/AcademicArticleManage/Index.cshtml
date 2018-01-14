@@ -8,22 +8,22 @@
 @using X.PagedList.Mvc.Core;
 
 <div class="pageheader">
-    <h2><i class="fa fa-edit"></i> AcademicArticleManage<span>Manage your AcademicArticle here.</span></h2>
+    <h2><i class="fa fa-edit"></i> AcademicArticleManage<span>学術文章を管理する.</span></h2>
     <div class="breadcrumb-wrapper">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
             <li><a href="@Url.Action("Index","SystemManage")">Background</a></li>
             <li>AcademicArticle</li>
-            <li class="active">AcademicArticle List</li>
+            <li><a href="@Url.Action("Index","AcademicArticleManage")">AcademicArticle List</a></li>
         </ol>
     </div>
 </div>
 <div class="contentpanel">
     <div class="row">
         <div class="col-md-12">
-            <h5 class="subtitle mb5">Article List</h5>
-            <p class="mb5">Checking my articles and update them.</p>
-            <a class="btn btn-primary btn-xs mb10" href="@Url.Action("Create","AcademicArticleManage")">New</a>
+            <h5 class="subtitle mb5">AcademicArticle List</h5>
+            <p class="mb5">学術文章をチェックして更新する.</p>
+            <a class="btn btn-primary btn-xs mb10" href="@Url.Action("Create","AcademicArticleManage")">新規作成</a>
             <div class="table-responsive">
                 <table class="table table-hidaction table-hover mb30">
                     <thead>

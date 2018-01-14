@@ -307,17 +307,30 @@
     }
 }
 
-.main-footer{
+.main-footer {
     background-color: @Deep-Grey-Origin;
-    
-    span,small{
-        color:@Medium-Grey-Origin;
+
+    span, small {
+        color: @Medium-Grey-Origin;
     }
-    strong{
+
+    strong {
         color: @Light-Grey-Origin;
         font-style: normal;
-
         font-weight: 500;
+    }
+
+    a {
+        color: @Medium-Grey-Origin;
+
+        -webkit-transition: opacity 0.5s ease;
+        -moz-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
+
+        &:hover {
+            color: @Light-Grey-Hover;
+            text-decoration:underline;
+        }
     }
 }
 

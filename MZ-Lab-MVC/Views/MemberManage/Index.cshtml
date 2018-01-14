@@ -13,8 +13,8 @@
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
             <li><a href="@Url.Action("Index","SystemManage")">Background</a></li>
-            <li><a href="@Url.Action("Index","MemberManage")">MemberManage</a></li>
-            <li class="active">Member List</li>
+            <li>Member</li>
+            <li><a href="@Url.Action("Index","MemberManage")">Member List</a></li>
         </ol>
     </div>
 </div>
@@ -23,7 +23,7 @@
         <div class="col-md-12">
             <h5 class="subtitle mb5">Member List</h5>
             <p class="mb5">メンバーをチェックして更新する.</p>
-            <a class="btn btn-primary btn-xs mb10" href="@Url.Action("Create","AcademicArticleManage")">New</a>
+            <a class="btn btn-primary btn-xs mb10" href="@Url.Action("Create","MemberManage")">新規作成</a>
             <div class="table-responsive">
                 <table class="table table-hidaction table-hover mb30">
                     <thead>

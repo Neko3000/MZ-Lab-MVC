@@ -562,6 +562,16 @@ pre {
   font-style: normal;
   font-weight: 500;
 }
+.main-footer a {
+  color: #c5c5c5;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+.main-footer a:hover {
+  color: #dcdcdc;
+  text-decoration: underline;
+}
 .personal-card-area {
   background-color: #f8f8f8;
 }

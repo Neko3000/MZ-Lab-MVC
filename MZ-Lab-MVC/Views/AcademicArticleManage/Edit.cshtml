@@ -6,7 +6,7 @@
 }
 
 <div class="pageheader">
-    <h2><i class="fa fa-edit"></i> AcademicArticleManage<span>Manage your AcademicArticle here.</span></h2>
+    <h2><i class="fa fa-edit"></i> AcademicArticleManage<span>学術文章を管理する.</span></h2>
     <div class="breadcrumb-wrapper">
         <span class="label">You are here:</span>
         <ol class="breadcrumb">
@@ -27,8 +27,8 @@
                     <a class="panel-close"></a>
                     <a class="minimize"></a>
                 </div>
-                <h4 class="panel-title">Article Infos</h4>
-                <p>Checking your article's details here.</p>
+                <h4 class="panel-title">Edit</h4>
+                <p>学術文章の情報を編集する.</p>
             </div>
 
             @Html.AntiForgeryToken()
@@ -65,7 +65,9 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.IsDetailed, htmlAttributes: new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6">
-                        @Html.CheckBoxFor(model => model.IsDetailed, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
+                        <label class="control-label">
+                            @Html.CheckBoxFor(model => model.IsDetailed, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
+                        </label>
                         @Html.ValidationMessageFor(model => model.IsDetailed, "", new { @class = "text-danger" })
                     </div>
                 </div>

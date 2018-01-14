@@ -41,7 +41,7 @@ namespace MZ_Lab_MVC.ViewModels
     {
         [Display(Name ="ID")]
         public int Id { get; set; }
-        [Display(Name = "画像/Ur")]
+        [Display(Name = "画像/Url")]
         public string CoverImgUrl { get; set; }
         [Display(Name = "内容")]
         public string FullDescription { get; set; }
@@ -74,7 +74,7 @@ namespace MZ_Lab_MVC.ViewModels
         [Required]
         [Display(Name = "ID")]
         public int Id { get; set; }
-        [Display(Name = "画像/Ur")]
+        [Display(Name = "画像/Url")]
         public string CoverImgUrl { get; set; }
         [Display(Name = "内容")]
         public string FullDescription { get; set; }
@@ -107,7 +107,7 @@ namespace MZ_Lab_MVC.ViewModels
         [Required]
         [Display(Name = "ID")]
         public int Id { get; set; }
-        [Display(Name = "画像/Ur")]
+        [Display(Name = "画像/Url")]
         public string CoverImgUrl { get; set; }
         [Display(Name = "内容")]
         public string FullDescription { get; set; }

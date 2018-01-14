@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MZ_Lab_MVC.Data;
 using MZ_Lab_MVC.Models;
 using MZ_Lab_MVC.Services;
+using System.Net;
 
 namespace MZ_Lab_MVC
 {
@@ -69,6 +70,20 @@ namespace MZ_Lab_MVC
 
             //initialize database
             context.Initialize();
+
+            //authorized
+            //app.UseStatusCodePages(async cont =>
+            //{
+            //    var request = cont.HttpContext.Request;
+            //    var response = cont.HttpContext.Response;
+
+            //    if (response.StatusCode == (int)HttpStatusCode.Unauthorized)
+            //    // you may also check requests path to do this only for specific methods       
+            //    // && request.Path.Value.StartsWith("/specificPath")
+            //    {
+            //        response.Redirect("/account/login");
+            //    }
+            //});
         }
     }
 }
