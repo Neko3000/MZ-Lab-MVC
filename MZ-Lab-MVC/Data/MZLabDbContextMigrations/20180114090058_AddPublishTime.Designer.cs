@@ -10,9 +10,10 @@ using System;
 namespace MZ_Lab_MVC.Migrations
 {
     [DbContext(typeof(MZLabDbContext))]
-    partial class MZLabDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180114090058_AddPublishTime")]
+    partial class AddPublishTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,8 +41,6 @@ namespace MZ_Lab_MVC.Migrations
                     b.Property<DateTime>("PostTime");
 
                     b.Property<string>("PublishTime");
-
-                    b.Property<string>("Remark");
 
                     b.Property<string>("Title");
 

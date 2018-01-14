@@ -29,8 +29,8 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th>PostTime</th>
+                            <th>内容</th>
+                            <th>公開時間</th>
 
                             <th></th>
                         </tr>
@@ -40,7 +40,7 @@
                         {
                             <tr>
                                 <td>@item.Id</td>
-                                <td>@item.Title</td>
+                                <td>@item.FullDescription</td>
                                 <td>@item.PostTime</td>
                                 <td class="table-action-hide">
                                     <a href="@Url.Action("Details","AcademicArticleManage",new { id=item.Id })">

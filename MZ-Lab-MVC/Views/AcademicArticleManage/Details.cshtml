@@ -31,31 +31,113 @@
 
         <div class="panel-body panel-body-nopadding">
             <div class="form-horizontal form-bordered">
+
                 <div class="form-group">
                     @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6 control-content">
-                        @Html.DisplayFor(model => model.Id, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Id, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                    <div class="col-sm-6 control-content">
-                        @Html.DisplayFor(model => model.Title, new { htmlAttributes = new { @class = "", @placeholder = "" } })
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PostTime, htmlAttributes: new { @class = "col-sm-3 control-label" })
-                    <div class="col-sm-6 control-content">
-                        @Html.DisplayFor(model => model.PostTime, new { htmlAttributes = new { @class = "", @placeholder = "" } })
-                    </div>
-                </div>
-
                 <div class="form-group">
                     @Html.LabelFor(model => model.CoverImgUrl, htmlAttributes: new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6 control-content">
-                        @Html.DisplayFor(model => model.CoverImgUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.CoverImgUrl, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FullDescription, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.FullDescription, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PostTime, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.PostTime, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsDetailed, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.IsDetailed, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Title, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title_EN, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Title_EN, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EventName, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.EventName, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.EventPlace, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.EventPlace, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PublishTime, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.PublishTime, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BookInfo, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.BookInfo, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Editors, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Editors, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "col-sm-3 control-label" })
+                    <div class="col-sm-6 control-content">
+                        <label class="control-label">
+                            @Html.DisplayFor(model => model.Remark, new { htmlAttributes = new { @class = "", @placeholder = "" } })
+                        </label>
                     </div>
                 </div>
 

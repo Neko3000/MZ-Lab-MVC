@@ -54,9 +54,20 @@ namespace MZ_Lab_MVC.Controllers
             var vm = new AcademicArticleDetailViewModel
             {
                 Id = academicArticle.Id,
-                Title = academicArticle.Title,
                 CoverImgUrl = academicArticle.CoverImgUrl,
+                FullDescription = academicArticle.FullDescription,
                 PostTime = academicArticle.PostTime,
+                Remark = academicArticle.Remark,
+                IsDetailed = academicArticle.IsDetailed,
+
+                Title = academicArticle.Title,
+                Title_EN = academicArticle.Title_EN,
+                EventName = academicArticle.EventName,
+                EventPlace = academicArticle.EventPlace,
+                PublishTime = academicArticle.PublishTime,
+                BookInfo = academicArticle.BookInfo,
+
+                Editors = academicArticle.Editors
             };
 
             return View(vm);
@@ -79,9 +90,20 @@ namespace MZ_Lab_MVC.Controllers
             {
                 var academicArticle = new AcademicArticle
                 {
-                    Title = model.Title,
                     CoverImgUrl = model.CoverImgUrl,
+                    FullDescription = model.FullDescription,
                     PostTime = model.PostTime,
+                    Remark = model.Remark,
+                    IsDetailed = model.IsDetailed,
+
+                    Title = model.Title,
+                    Title_EN = model.Title_EN,
+                    EventName = model.EventName,
+                    EventPlace = model.EventPlace,
+                    PublishTime = model.PublishTime,
+                    BookInfo = model.BookInfo,
+
+                    Editors = model.Editors
                 };
                 db.AcademicArticles.Add(academicArticle);
                 db.SaveChanges();
@@ -108,9 +130,20 @@ namespace MZ_Lab_MVC.Controllers
             var vm = new AcademicArticleEditViewModel
             {
                 Id = academicArticle.Id,
-                Title = academicArticle.Title,
                 CoverImgUrl = academicArticle.CoverImgUrl,
-                PostTime = academicArticle.PostTime
+                FullDescription = academicArticle.FullDescription,
+                PostTime = academicArticle.PostTime,
+                Remark = academicArticle.Remark,
+                IsDetailed = academicArticle.IsDetailed,
+
+                Title = academicArticle.Title,
+                Title_EN = academicArticle.Title_EN,
+                EventName = academicArticle.EventName,
+                EventPlace = academicArticle.EventPlace,
+                PublishTime = academicArticle.PublishTime,
+                BookInfo = academicArticle.BookInfo,
+
+                Editors = academicArticle.Editors
             };
             return View(vm);
         }
@@ -123,10 +156,20 @@ namespace MZ_Lab_MVC.Controllers
                 var academicArticle = db.AcademicArticles.Find(model.Id);
 
                 academicArticle.Id = model.Id;
-                academicArticle.Title = model.Title;
                 academicArticle.CoverImgUrl = model.CoverImgUrl;
+                academicArticle.FullDescription = model.FullDescription;
                 academicArticle.PostTime = model.PostTime;
+                academicArticle.Remark = model.Remark;
+                academicArticle.IsDetailed = model.IsDetailed;
 
+                academicArticle.Title = model.Title;
+                academicArticle.Title_EN = model.Title_EN;
+                academicArticle.EventName = model.EventName;
+                academicArticle.EventPlace = model.EventPlace;
+                academicArticle.PublishTime = model.PublishTime;
+                academicArticle.BookInfo = model.BookInfo;
+
+                academicArticle.Editors = model.Editors;
 
                 db.Entry(academicArticle).State = EntityState.Modified;
                 db.SaveChanges();
@@ -151,9 +194,20 @@ namespace MZ_Lab_MVC.Controllers
             var vm = new AcademicArticleDeleteViewModel
             {
                 Id = academicArticle.Id,
-                Title = academicArticle.Title,
+                CoverImgUrl = academicArticle.CoverImgUrl,
+                FullDescription = academicArticle.FullDescription,
                 PostTime = academicArticle.PostTime,
-                CoverImgUrl = academicArticle.CoverImgUrl
+                Remark = academicArticle.Remark,
+                IsDetailed = academicArticle.IsDetailed,
+
+                Title = academicArticle.Title,
+                Title_EN = academicArticle.Title_EN,
+                EventName = academicArticle.EventName,
+                EventPlace = academicArticle.EventPlace,
+                PublishTime = academicArticle.PublishTime,
+                BookInfo = academicArticle.BookInfo,
+
+                Editors = academicArticle.Editors
             };
             return View(vm);
         }

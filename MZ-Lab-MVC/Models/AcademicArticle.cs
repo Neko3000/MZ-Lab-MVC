@@ -19,8 +19,11 @@ namespace MZ_Lab_MVC.Models
         public string Title_EN { get; set; }
         public string EventName { get; set; }
         public string EventPlace { get; set; }
+        public string PublishTime { get; set; }
         public string BookInfo { get; set; }
 
         public string Editors { get; set; }
+
+        public string Remark { get; set; }
     }
 }
