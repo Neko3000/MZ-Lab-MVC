@@ -1,88 +1,115 @@
-﻿@using System.Collections.Generic
-@using System.Linq
-@using Microsoft.AspNetCore.Http
-@using Microsoft.AspNetCore.Http.Authentication
-@model LoginViewModel
-@inject SignInManager<ApplicationUser> SignInManager
-
+﻿@model MZ_Lab_MVC.Models.AccountViewModels.LoginViewModel
 @{
-    ViewData["Title"] = "Log in";
     Layout = "";
 }
 
-<h2>@ViewData["Title"]</h2>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Email"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Password"></label>
-                    <input asp-for="Password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="RememberMe">
-                            <input asp-for="RememberMe" />
-                            @Html.DisplayNameFor(m => m.RememberMe)
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-default">Log in</button>
-                </div>
-                <div class="form-group">
-                    <p>
-                        <a asp-action="ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to log in.</h4>
-            <hr />
-            @{
-                var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-                if (loginProviders.Count == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in loginProviders)
-                                {
-                                    <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
-                                }
-                            </p>
-                        </div>
-                    </form>
-                }
-            }
-        </section>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-@section Scripts {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
-}
+    <title>Bracket Responsive Bootstrap3 Admin</title>
+
+    <link href="~/bracket/css/style.default.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="signin">
+
+
+    <section>
+
+        <div class="signinpanel">
+
+            <div class="row">
+
+                <div class="col-md-7">
+
+                    <div class="signin-info">
+                        <div class="logopanel">
+                            <h1><span>[</span> bracket <span>]</span></h1>
+                        </div><!-- logopanel -->
+
+                        <div class="mb20"></div>
+
+                        <h5><strong>Welcome to Bracket Bootstrap 3 Template!</strong></h5>
+                        <ul>
+                            <li><i class="fa fa-arrow-circle-o-right mr5"></i> Fully Responsive Layout</li>
+                            <li><i class="fa fa-arrow-circle-o-right mr5"></i> HTML5/CSS3 Valid</li>
+                            <li><i class="fa fa-arrow-circle-o-right mr5"></i> Retina Ready</li>
+                            <li><i class="fa fa-arrow-circle-o-right mr5"></i> WYSIWYG CKEditor</li>
+                            <li><i class="fa fa-arrow-circle-o-right mr5"></i> and much more...</li>
+                        </ul>
+                        <div class="mb20"></div>
+                        <strong>Not a member? <a href="@Url.Action("Register","Account")">Sign Up</a></strong>
+                    </div><!-- signin0-info -->
+
+                </div><!-- col-sm-7 -->
+
+                <div class="col-md-5">
+
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                    {
+                            <h4 class="nomargin">Sign In</h4>
+                            <p class="mt5 mb20">Login to access your account.</p>
+
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control uname", @placeholder = "Username" } })
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control pword", @placeholder = "Password" } })
+                            <a href=""><small>Forgot Your Password?</small></a>
+                            <button class="btn btn-success btn-block" type="submit">Sign In</button>
+                    }
+                </div><!-- col-sm-5 -->
+
+            </div><!-- row -->
+
+            <div class="signup-footer">
+                <div class="pull-left">
+                    &copy; 2014. All Rights Reserved. Bracket Bootstrap 3 Admin Template
+                </div>
+                <div class="pull-right">
+                    Created By: <a href="http://themepixels.com/" target="_blank">ThemePixels</a>
+                </div>
+            </div>
+
+        </div><!-- signin -->
+
+    </section>
+
+    <script src="~/bracket/js/jquery-1.11.1.min.js"></script>
+    <script src="~/bracket/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/bracket/js/bootstrap.min.js"></script>
+    <script src="~/bracket/js/modernizr.min.js"></script>
+    <script src="~/bracket/js/jquery.sparkline.min.js"></script>
+    <script src="~/bracket/js/jquery.cookies.js"></script>
+
+    <script src="~/bracket/js/toggles.min.js"></script>
+    <script src="~/bracket/js/retina.min.js"></script>
+
+    <script src="~/bracket/js/custom.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+
+            // Please do not use the code below
+            // This is for demo purposes only
+            var c = jQuery.cookie('change-skin');
+            if (c && c == 'greyjoy') {
+                jQuery('.btn-success').addClass('btn-orange').removeClass('btn-success');
+            } else if (c && c == 'dodgerblue') {
+                jQuery('.btn-success').addClass('btn-primary').removeClass('btn-success');
+            } else if (c && c == 'katniss') {
+                jQuery('.btn-success').addClass('btn-primary').removeClass('btn-success');
+            }
+        });
+    </script>
+
+</body>
+</html>

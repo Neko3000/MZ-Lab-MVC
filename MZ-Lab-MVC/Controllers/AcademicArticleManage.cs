@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MZ_Lab_MVC.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class AcademicArticleManage : Controller
     {
         // GET: /<controller>/
