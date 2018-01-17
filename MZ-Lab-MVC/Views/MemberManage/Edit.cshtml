@@ -19,7 +19,7 @@
 </div>
 
 <div class="contentpanel">
-    @using (Html.BeginForm("Edit", "MemberManageManage", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal form-bordered", enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Edit", "MemberManage", FormMethod.Post, htmlAttributes: new { @class = "form-horizontal form-bordered", enctype = "multipart/form-data" }))
     {
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -73,7 +73,8 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.AvatarUrl, htmlAttributes: new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6">
-                        @Html.EditorFor(model => model.AvatarUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
+                        <img src="@Url.Content(Model.AvatarUrl)" />
+                        @Html.EditorFor(model => model.AvatarImg, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
                         @Html.ValidationMessageFor(model => model.AvatarUrl, "", new { @class = "text-danger" })
                     </div>
                 </div>

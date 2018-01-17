@@ -1,4 +1,4 @@
-﻿
+﻿@model MZ_Lab_MVC.ViewModels.MemberViewModel
 @{
     ViewData["Title"] = "Member";
 }
@@ -11,78 +11,31 @@
 <section class="personal-card-area padding-vertical-60px">
     <div class="container padding-vertical-60px">
         <div class="row">
-            <div class="col-xs-12 col-md-6 margin-vertical-15px">
-                <div class="single-personal-card padding-vertical-30px padding-horizontal-15px">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-3 single-personal-card-header center-container padding-vertical-15px">
-                            <div class="mask-circle center-object">
-                                <img src="~/img/avator1_120x120.png" alt="">
+            @foreach (var member in Model.Members)
+            {
+                <div class="col-xs-12 col-md-6 margin-vertical-15px">
+                    <div class="single-personal-card padding-vertical-30px padding-horizontal-15px">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-3 single-personal-card-header center-container padding-vertical-15px">
+                                <div class="mask-circle center-object">
+                                    <img src="@Url.Content(member.AvatarUrl)" alt="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xs-6 col-md-3 single-personal-card-body padding-vertical-15px">
-                            <pre>Sasahara Youko</pre>
-                            <h4>笹原 陽子</h4>
-                            <small>Comp Science, M2</small>
-                        </div>
-                        <div class="col-xs-6 col-md-6 single-personal-card-footer padding-vertical-15px">
-                            <small>
-                                最近の趣味はアイロンで卵を焼くこと、</br>
-                                しかし、まだうまくできなくて...</br>
-                                </br>
-                                今年もやる気が出れるように !
-                            </small>
+                            <div class="col-xs-6 col-md-3 single-personal-card-body padding-vertical-15px">
+                                <pre>@member.GivenNamePronunciation @member.FamilyNamePronunciation</pre>
+                                <h4>@member.GivenName @member.FamilyName</h4>
+                                <small>@member.Major, @member.Grade</small>
+                            </div>
+                            <div class="col-xs-6 col-md-6 single-personal-card-footer padding-vertical-15px">
+                                <small>
+                                    @Html.Raw(member.Introduction)
+                                </small>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-md-6 margin-vertical-15px">
-                <div class="single-personal-card padding-vertical-30px padding-horizontal-15px">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-3 single-personal-card-header center-container padding-vertical-15px">
-                            <div class="mask-circle center-object">
-                                <img src="~/img/avator2_120x120.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-md-3 single-personal-card-body padding-vertical-15px">
-                            <pre>ステイブン デイアズ</pre>
-                            <h4>Steven Diaz</h4>
-                            <small>Infor Behavior, M1</small>
-                        </div>
-                        <div class="col-xs-6 col-md-6 single-personal-card-footer padding-vertical-15px">
-                            <small>
-                                Hey, Guys! Nice to meet you!</br>
-                                We could do something really crazy here.</br>
-                                </br>
-                                And, we gonna remember it.
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-6 margin-vertical-15px">
-                <div class="single-personal-card padding-vertical-30px padding-horizontal-15px">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-3 single-personal-card-header center-container padding-vertical-15px">
-                            <div class="mask-circle center-object">
-                                <img src="~/img/avator3_120x120.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-md-3 single-personal-card-body padding-vertical-15px">
-                            <pre>Haruna Jyuun</pre>
-                            <h4>榛名 純</h4>
-                            <small>Infor Society, M1</small>
-                        </div>
-                        <div class="col-xs-6 col-md-6 single-personal-card-footer padding-vertical-15px">
-                            <small>
-                                淡いものが好きのやつ。</br>
-                                いつもなんでも受け入れやすいやつ。</br>
-                                特に行動力がないやつ。</br>
-                                しかし、頼りになれるやつ。</br>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            }
         </div>
     </div>
 </section>

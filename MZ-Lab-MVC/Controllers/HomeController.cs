@@ -27,15 +27,18 @@ namespace MZ_Lab_MVC.Controllers
 
         public IActionResult Member()
         {
-            ViewData["Message"] = "Your application description page.";
+            var vm = new MemberViewModel
+            {
+                Members = db.Members.ToList()
+            };
 
-            return View();
+            return View(vm);
         }
 
         public IActionResult Academics(int? page)
         {
-            var academicArticles = db.AcademicArticles.ToList();
-            var pageSize = 8;
+            var academicArticles = db.AcademicArticles.OrderByDescending(a => a.Id).ToList();
+            var pageSize = 10;
             var pageNumber = page ?? 1;
             var singlePageModels = academicArticles.ToPagedList(pageNumber, pageSize);
             var totalPageNumber = (academicArticles.Count - 1) / pageSize + 1;
@@ -50,7 +53,7 @@ namespace MZ_Lab_MVC.Controllers
                 }
             }
 
-            var academicsVM = new AcademicsViewModel()
+            var academicsVM = new AcademicsViewModel
             {
                 AcademicArticles = singlePageModels,
                 YearOfAcademicArticles = yearOfAcademicArticle,

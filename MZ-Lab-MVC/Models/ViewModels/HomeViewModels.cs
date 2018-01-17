@@ -13,6 +13,10 @@ namespace MZ_Lab_MVC.ViewModels
         public int TotalPage { get; set; }
     }
 
+    public class MemberViewModel
+    {
+        public IEnumerable<Member> Members { get; set; }
+    }
 
     public class AcademicsViewModel
     {

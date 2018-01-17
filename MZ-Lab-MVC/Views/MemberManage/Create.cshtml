@@ -72,7 +72,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.AvatarUrl, htmlAttributes: new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6">
-                        @Html.EditorFor(model => model.AvatarUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
+                        @Html.EditorFor(model => model.AvatarImg, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
                         @Html.ValidationMessageFor(model => model.AvatarUrl, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
 
-                </div>
+            </div>
                 }
             </div>
 
@@ -139,25 +139,6 @@
 
             // HTML5 WYSIWYG Editor
             jQuery('#wysiwyg').wysihtml5({ color: true, html: true });
-
-            //read and show img
-            function readURL(input) {
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        $('#post-img').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-
-                }
-            }
-
-            $("#CoverImg").change(function (e) {
-                readURL(this);
-                $('#post-img-path').val(e.target.files[0].name);
-            });
 
             "use strict";
 

@@ -27,7 +27,7 @@ namespace MZ_Lab_MVC.Controllers
 
         public IActionResult Index(int? page)
         {
-            var academicArticles = db.AcademicArticles.ToList();
+            var academicArticles = db.AcademicArticles.OrderByDescending(a => a.Id).ToList();
             var pageSize = 10;
             var pageNumber = page ?? 1;
             var singlePageModels = academicArticles.ToPagedList(pageNumber, pageSize);

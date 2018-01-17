@@ -37,12 +37,13 @@
                             </div>
                             <div class="single-academic-card-body margin-ver-5px">
                                 <div class="center-img-container">
-                                    <img class="center-img-object" src="~/img/ac1.jpg" alt="">
+                                    <img class="center-img-object" src="~/img/img-default/default1.jpg" alt="">
+                                    <img class="center-img-object" src="@(academicArticle.CoverImgUrl==""?Url.Content("~/img/img-default/default1.jpg"):academicArticle.CoverImgUrl)" alt="">
                                 </div>
                             </div>
                             <div class="single-academic-card-footer margin-top-30px">
                                 <big>
-                                    @academicArticle.Title
+                                    @(academicArticle.FullDescription == ""?academicArticle.Title: academicArticle.FullDescription)
                                 </big>
                             </div>
                         </div>

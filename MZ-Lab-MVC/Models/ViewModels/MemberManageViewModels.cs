@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using MZ_Lab_MVC.Models;
 
 namespace MZ_Lab_MVC.ViewModels
@@ -19,6 +20,7 @@ namespace MZ_Lab_MVC.ViewModels
         public string GivenNamePronunciation { get; set; }
         [Display(Name = "画像/Url")]
         public string AvatarUrl { get; set; }
+        public IFormFile AvatarImg { get; set; }
         [Display(Name = "専門")]
         public string Major { get; set; }
         [Display(Name = "学年")]
@@ -45,6 +47,7 @@ namespace MZ_Lab_MVC.ViewModels
         public string GivenNamePronunciation { get; set; }
         [Display(Name = "画像/Url")]
         public string AvatarUrl { get; set; }
+        public IFormFile AvatarImg { get; set; }
         [Display(Name = "専門")]
         public string Major { get; set; }
         [Display(Name = "学年")]
@@ -72,6 +75,7 @@ namespace MZ_Lab_MVC.ViewModels
         public string GivenNamePronunciation { get; set; }
         [Display(Name = "画像/Url")]
         public string AvatarUrl { get; set; }
+        public IFormFile AvatarImg { get; set; }
         [Display(Name = "専門")]
         public string Major { get; set; }
         [Display(Name = "学年")]
@@ -99,6 +103,7 @@ namespace MZ_Lab_MVC.ViewModels
         public string GivenNamePronunciation { get; set; }
         [Display(Name = "画像/Url")]
         public string AvatarUrl { get; set; }
+        public IFormFile AvatarImg { get; set; }
         [Display(Name = "専門")]
         public string Major { get; set; }
         [Display(Name = "学年")]

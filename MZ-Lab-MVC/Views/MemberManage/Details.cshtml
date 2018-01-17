@@ -80,6 +80,7 @@
                     @Html.LabelFor(model => model.AvatarUrl, htmlAttributes: new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6 control-content">
                         <label class="control-label">
+                            <img src="@Url.Content(Model.AvatarUrl)" />
                             @Html.DisplayFor(model => model.AvatarUrl, new { htmlAttributes = new { @class = "", @placeholder = "" } })
                         </label>
                     </div>

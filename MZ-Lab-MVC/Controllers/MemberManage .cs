@@ -9,6 +9,7 @@ using MZ_Lab_MVC.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -86,13 +87,23 @@ namespace MZ_Lab_MVC.Controllers
         {
             if(ModelState.IsValid)
             {
+                Guid guid = Guid.NewGuid();
+
+                if (model.AvatarImg != null)
+                {
+                    var path = Path.Combine(
+                        Directory.GetCurrentDirectory(), "wwwroot"+"/img/avatars/",
+                        guid.ToString() +"-"+model.AvatarImg.FileName);
+                    model.AvatarImg.CopyTo(new FileStream(path, FileMode.Create));
+                }
+
                 var member = new Member
                 {
                     FamilyName = model.FamilyName,
                     GivenName = model.GivenName,
                     FamilyNamePronunciation = model.FamilyNamePronunciation,
                     GivenNamePronunciation = model.GivenNamePronunciation,
-                    AvatarUrl = model.AvatarUrl,
+                    AvatarUrl = model.AvatarImg == null ? "":"~" + "/img/avatars/" + guid.ToString() + "-" + model.AvatarImg.FileName,
                     Major = model.Major,
                     Grade = model.Grade,
                     Introduction = model.Introduction,
@@ -141,15 +152,26 @@ namespace MZ_Lab_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(MemberEditViewModel model)
         {
+
             if (ModelState.IsValid)
             {
+                Guid guid = Guid.NewGuid();
+
+                if (model.AvatarImg != null)
+                {
+                    var path = Path.Combine(
+                        Directory.GetCurrentDirectory(), "wwwroot" + "/img/avatars/",
+                        guid.ToString() + "-" + model.AvatarImg.FileName);
+                    model.AvatarImg.CopyTo(new FileStream(path, FileMode.Create));
+                }
+
                 var member = db.Members.Find(model.Id);
 
                 member.FamilyName = model.FamilyName;
                 member.GivenName = model.GivenName;
                 member.FamilyNamePronunciation = model.FamilyNamePronunciation;
                 member.GivenNamePronunciation = model.GivenNamePronunciation;
-                member.AvatarUrl = model.AvatarUrl;
+                member.AvatarUrl = model.AvatarImg == null ? member.AvatarUrl : "~" + "/img/avatars/" + guid.ToString() + "-" + model.AvatarImg.FileName;
                 member.Major = model.Major;
                 member.Grade = model.Grade;
                 member.Introduction = model.Introduction;
