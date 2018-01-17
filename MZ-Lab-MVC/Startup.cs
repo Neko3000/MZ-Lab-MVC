@@ -27,12 +27,14 @@ namespace MZ_Lab_MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //DI for DbContext
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<MZLabDbContext>(options =>
                 options.UseMySQL(Configuration.GetConnectionString("MZLabDbConnection")));
 
+            //DI for identity services
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -40,11 +42,17 @@ namespace MZ_Lab_MVC
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
+            // Add Database Initializer
+            services.AddScoped<IDbConextInitializer, DbContextInitializer>();
+
             services.AddMvc();
+            
+            //authorize
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MZLabDbContext context, ApplicationDbContext context_app)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MZLabDbContext context, ApplicationDbContext context_app,IDbConextInitializer initer)
         {
             if (env.IsDevelopment())
             {
@@ -69,22 +77,9 @@ namespace MZ_Lab_MVC
             });
 
             //initialize database
-            context.Initialize();
-            context_app.Initialize();
-            
-            //authrization
-            app.UseStatusCodePages(async cont =>
-            {
-                var request = cont.HttpContext.Request;
-                var response = cont.HttpContext.Response;
-
-                if (response.StatusCode == (int)HttpStatusCode.Unauthorized)
-                // you may also check requests path to do this only for specific methods       
-                // && request.Path.Value.StartsWith("/specificPath")
-                {
-                    response.Redirect("/account/login");
-                }
-            });
+            //context.Initialize();
+            //context_app.Initialize();
+            initer.Initialize();
         }
     }
 }

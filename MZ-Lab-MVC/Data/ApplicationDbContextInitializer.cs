@@ -7,10 +7,6 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MZ_Lab_MVC.Data
 {
-    public interface IDbInitializer
-    {
-        void Initialize();
-    }
 
     public static class  ApplicationDbContextInitializer
     {

@@ -8,11 +8,13 @@ using MZ_Lab_MVC.Models;
 using MZ_Lab_MVC.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MZ_Lab_MVC.Controllers
 {
+    [Authorize]
     public class MemberManage : Controller
     {
         // GET: /<controller>/
