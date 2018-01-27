@@ -12,6 +12,7 @@ using MZ_Lab_MVC.Data;
 using MZ_Lab_MVC.Models;
 using MZ_Lab_MVC.Services;
 using System.Net;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace MZ_Lab_MVC
 {
@@ -39,15 +40,15 @@ namespace MZ_Lab_MVC
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Add application services.
+            //Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
-            // Add Database Initializer
+            //Add Database Initializer
             services.AddScoped<IDbConextInitializer, DbContextInitializer>();
 
             services.AddMvc();
             
-            //authorize
+            //authorize Service
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
         }
 
@@ -67,6 +68,11 @@ namespace MZ_Lab_MVC
 
             app.UseStaticFiles();
 
+            //the Authentication needs ForwardedHeaders middle-ware to run
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
             app.UseAuthentication();
 
             app.UseMvc(routes =>
@@ -77,8 +83,6 @@ namespace MZ_Lab_MVC
             });
 
             //initialize database
-            //context.Initialize();
-            //context_app.Initialize();
             initer.Initialize();
         }
     }
