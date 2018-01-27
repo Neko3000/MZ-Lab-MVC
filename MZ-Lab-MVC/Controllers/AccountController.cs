@@ -47,8 +47,9 @@ namespace MZ_Lab_MVC.Controllers
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
+            var vm = new LoginViewModel();
             //ViewData["ReturnUrl"] = returnUrl;
-            return View();
+            return View(vm);
         }
 
         [HttpPost]
