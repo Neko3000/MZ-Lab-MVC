@@ -1,108 +1,59 @@
 ﻿@model MZ_Lab_MVC.Models.AccountViewModels.LoginViewModel
+
 @{
-    Layout = "";
+    ViewData["Title"] = "Account";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+        <section>
 
-    <title>MZLab Dashboard</title>
+            <div class="signinpanel">
 
-    <link href="~/bracket/css/style.default.css" rel="stylesheet">
+                <div class="row">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-</head>
+                    <div class="col-md-7">
 
-<body class="signin">
+                        <div class="signin-info">
+                            <div class="logopanel">
+                                <h1><span>[</span> MZLab.Dashboard <span>]</span></h1>
+                            </div><!-- logopanel -->
 
+                            <div class="mb20"></div>
 
-    <section>
+                            <h5><strong>ようこそ、宮崎研究室の管理用ページ!</strong></h5>
+                            <ul>
+                                <li><i class="fa fa-arrow-circle-o-right mr5"></i> 学術文章管理</li>
+                                <li><i class="fa fa-arrow-circle-o-right mr5"></i> メンバー管理</li>
+                            </ul>
+                            <div class="mb20"></div>
+                        </div><!-- signin0-info -->
 
-        <div class="signinpanel">
+                    </div><!-- col-sm-7 -->
 
-            <div class="row">
+                    <div class="col-md-5">
 
-                <div class="col-md-7">
-
-                    <div class="signin-info">
-                        <div class="logopanel">
-                            <h1><span>[</span> MZLab.Dashboard <span>]</span></h1>
-                        </div><!-- logopanel -->
-
-                        <div class="mb20"></div>
-
-                        <h5><strong>ようこそ、宮崎研究室の管理用ページ!</strong></h5>
-                        <ul>
-                            <li><i class="fa fa-arrow-circle-o-right mr5"></i> 学術文章管理</li>
-                            <li><i class="fa fa-arrow-circle-o-right mr5"></i> メンバー管理</li>
-                        </ul>
-                        <div class="mb20"></div>
-                    </div><!-- signin0-info -->
-
-                </div><!-- col-sm-7 -->
-
-                <div class="col-md-5">
-
-                    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
                     {
-                            <h4 class="nomargin">アカウント</h4>
-                            <p class="mt5 mb20">Login to access your account.</p>
+                        <h4 class="nomargin">アカウント</h4>
+                        <p class="mt5 mb20">Login to access your account.</p>
 
-                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control uname", @placeholder = "Username" } })
-                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control pword", @placeholder = "Password" } })
-                            <button class="btn btn-success btn-block" type="submit">ログイン</button>
-                    }
-                </div><!-- col-sm-5 -->
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control uname", @placeholder = "Username" } })
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control pword", @placeholder = "Password" } })
+                        <button class="btn btn-success btn-block" type="submit">ログイン</button>
+                }
+                    </div><!-- col-sm-5 -->
 
-            </div><!-- row -->
+                </div><!-- row -->
 
-            <div class="signup-footer">
-                <div class="pull-left">
-                    &copy; 2018. All Rights Reserved. Shizuoka University Miyazaki Lab.
+                <div class="signup-footer">
+                    <div class="pull-left">
+                        &copy; 2018. All Rights Reserved. Shizuoka University Miyazaki Lab.
+                    </div>
+
                 </div>
-  
-            </div>
 
-        </div><!-- signin -->
+            </div><!-- signin -->
 
-    </section>
+        </section>
 
-    <script src="~/bracket/js/jquery-1.11.1.min.js"></script>
-    <script src="~/bracket/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="~/bracket/js/bootstrap.min.js"></script>
-    <script src="~/bracket/js/modernizr.min.js"></script>
-    <script src="~/bracket/js/jquery.sparkline.min.js"></script>
-    <script src="~/bracket/js/jquery.cookies.js"></script>
 
-    <script src="~/bracket/js/toggles.min.js"></script>
-    <script src="~/bracket/js/retina.min.js"></script>
-
-    <script src="~/bracket/js/custom.js"></script>
-    <script>
-        jQuery(document).ready(function () {
-
-            // Please do not use the code below
-            // This is for demo purposes only
-            var c = jQuery.cookie('change-skin');
-            if (c && c == 'greyjoy') {
-                jQuery('.btn-success').addClass('btn-orange').removeClass('btn-success');
-            } else if (c && c == 'dodgerblue') {
-                jQuery('.btn-success').addClass('btn-primary').removeClass('btn-success');
-            } else if (c && c == 'katniss') {
-                jQuery('.btn-success').addClass('btn-primary').removeClass('btn-success');
-            }
-        });
-    </script>
-
-</body>
-</html>

@@ -1,0 +1,86 @@
+
+//clear <ui/> style
+ul{
+    padding: 0;
+    margin: 0;
+    li{
+        list-style: none;
+        text-decoration: none;
+    }
+}
+//clear default(bootstrap?) style of texts
+h1,h2,h3,h4,h5,span,p,big,small{
+    margin: 0 0;
+    padding:0 0;
+}
+
+//center-object
+.center-container{
+    position: relative;
+    text-align: center;
+    >.center-object{
+        margin-left:auto;
+        margin-right: auto;
+    }
+}
+
+//center-img size:1366x800
+.center-img-container{
+    position: relative;
+    overflow: hidden;
+    height: 800px;
+    .center-img-object{
+        position: absolute;
+        margin-left:-683px;
+        margin-top:-400px;
+        
+        left: 50%;
+        top:50%;
+    }
+}
+
+//text-align
+.text-left{
+    text-align: left;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+
+//layers
+.black-layer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.mask-circle{
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+//display
+.inline-block{
+    display: inline-block;
+}
+
+//element
+.element-point{
+    display: inline-block;
+
+    border-radius: 50%;
+}
+
+//pager
+.transparent-object {
+    opacity: 0;
+
+    a {
+        pointer-events: none;
+    }
+}
