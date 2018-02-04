@@ -580,6 +580,8 @@ pre {
   top: 0;
   left: 0;
   background-color: white;
+  -webkit-box-shadow: #b9b9b980 4px 4px 6px;
+  -moz-box-shadow: #b9b9b980 4px 4px 6px;
   box-shadow: #b9b9b980 4px 4px 6px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -588,7 +590,9 @@ pre {
 .personal-card-area .single-personal-card:Hover {
   top: -10px;
   left: -5px;
-  box-shadow: #b9b9b940 20px 15px 10px;
+  -webkit-box-shadow: #b9b9b980 4px 4px 6px;
+  -moz-box-shadow: #b9b9b980 4px 4px 6px;
+  box-shadow: #b9b9b980 4px 4px 6px;
 }
 .personal-card-area .single-personal-card .single-personal-card-header img {
   width: 60px;
@@ -634,7 +638,9 @@ pre {
   position: relative;
   top: 0;
   left: 0;
-  box-shadow: 4px 4px 6px #b9b9b980;
+  -webkit-box-shadow: #b9b9b980 4px 4px 6px;
+  -moz-box-shadow: #b9b9b980 4px 4px 6px;
+  box-shadow: #b9b9b980 4px 4px 6px;
   background-color: white;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -643,7 +649,9 @@ pre {
 .academic-card-area .single-academic-card:Hover {
   top: -10px;
   left: -5px;
-  box-shadow: #b9b9b940 20px 15px 10px;
+  -webkit-box-shadow: #b9b9b980 4px 4px 6px;
+  -moz-box-shadow: #b9b9b980 4px 4px 6px;
+  box-shadow: #b9b9b980 4px 4px 6px;
 }
 .academic-card-area .single-academic-card .single-academic-card-header h4 {
   color: #a4a4a4;
@@ -680,7 +688,9 @@ pre {
   position: relative;
   top: 0;
   left: 0;
-  box-shadow: 4px 4px 6px #b9b9b980;
+  -webkit-box-shadow: #b9b9b980 4px 4px 6px;
+  -moz-box-shadow: #b9b9b980 4px 4px 6px;
+  box-shadow: #b9b9b980 4px 4px 6px;
   background-color: white;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -689,7 +699,9 @@ pre {
 .contact-card-area .contact-card:Hover {
   top: -10px;
   left: -5px;
-  box-shadow: #b9b9b940 20px 15px 10px;
+  -webkit-box-shadow: #b9b9b980 4px 4px 6px;
+  -moz-box-shadow: #b9b9b980 4px 4px 6px;
+  box-shadow: #b9b9b980 4px 4px 6px;
 }
 .contact-card-area .contact-card .center-img-container {
   height: 340px;

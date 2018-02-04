@@ -1,7 +1,10 @@
 ﻿@model MZ_Lab_MVC.ViewModels.AcademicsViewModel
+
 @{
     ViewData["Title"] = "About";
 }
+
+@using System.Globalization;
 
 <section>
     <div class="center-img-container">
@@ -27,13 +30,15 @@
                         </div>
                     </div>
                 </div>
-                @foreach (var academicArticle in Model.AcademicArticles)
+                @for(int i = 0; i< Model.AcademicArticles.Count(); i++)
                 {
+                    var academicArticle = Model.AcademicArticles.ToList()[i];
+
                     @if (academicArticle.PostTime.Year.ToString() == year)
                     {
                         <div class="single-academic-card margin-vertical-10px padding-vertical-60px padding-horizontal-60px">
                             <div class="single-academic-card-header margin-bottom-15px">
-                                <h4 class="text-center">06<em> / Jun</em></h4>
+                                <h4 class="text-center">@academicArticle.PostTime.Year.ToString()<em> / @academicArticle.PostTime.ToString("MMM", new CultureInfo("en-US"))</em></h4>
                             </div>
                             <div class="single-academic-card-body margin-ver-5px">
                                 <div class="center-img-container">
@@ -48,12 +53,14 @@
                                     }
                                     else
                                     {
-                                        @(academicArticle.FullDescription == ""?academicArticle.Title: academicArticle.FullDescription)
+                                        @(academicArticle.FullDescription == "" ? academicArticle.Title : academicArticle.FullDescription)
                                     }
                                 </big>
                             </div>
                         </div>
 
+                        @if(i < Model.AcademicArticles.Count() - 1)
+                        {
                         <div class="academic-card-splitter">
                             <div class="inline-block">
                                 <div class="center-container margin-bottom-5px">
@@ -64,6 +71,7 @@
                                 </div>
                             </div>
                         </div>
+                        }
 
                     }
 
