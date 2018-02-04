@@ -76,6 +76,9 @@
                         <img src="@Url.Content(Model.AvatarUrl)" />
                         @Html.EditorFor(model => model.AvatarImg, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
                         @Html.ValidationMessageFor(model => model.AvatarUrl, "", new { @class = "text-danger" })
+                        <span class="help-block">
+                            サイズ[60px x 60px]の画像を使ってください
+                        </span>
                     </div>
                 </div>
 
@@ -84,6 +87,12 @@
                     <div class="col-sm-6">
                         @Html.EditorFor(model => model.Major, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
                         @Html.ValidationMessageFor(model => model.Major, "", new { @class = "text-danger" })
+                        <span class="help-block">
+                            専門参考<br />
+                            CS - Computer Science => Comp Scienece<br />
+                            IS - Information Society => Infor Society<br />
+                            ID - Information Design => Infor Design<br />
+                        </span>
                     </div>
                 </div>
 

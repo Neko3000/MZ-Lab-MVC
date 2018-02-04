@@ -39,8 +39,11 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.CoverImgUrl, htmlAttributes: new { @class = "col-sm-3 control-label" })
                     <div class="col-sm-6">
-                        @Html.EditorFor(model => model.CoverImgUrl, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
-                        @Html.ValidationMessageFor(model => model.CoverImgUrl, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.CoverImg, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
+                        @Html.ValidationMessageFor(model => model.CoverImg, "", new { @class = "text-danger" })
+                        <span class="help-block">
+                            サイズ[1020px x 100px]の画像を使ってください
+                        </span>
                     </div>
                 </div>
 
@@ -58,6 +61,9 @@
                     <div class="col-sm-6">
                         @Html.EditorFor(model => model.PostTime, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
                         @Html.ValidationMessageFor(model => model.PostTime, "", new { @class = "text-danger" })
+                        <span class="help-block">
+                            デフォルトのは今の時間
+                        </span>
                     </div>
                 </div>
 
@@ -67,6 +73,21 @@
                         <label class="control-label">
                             @Html.CheckBoxFor(model => model.IsDetailed, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
                         </label>
+                        <span class="help-block">
+                            このプロパティをチェックしたら、研究実績のページの文章は「内容」の代わりに、下の情報で表示します <br>
+                            公式 - 「作者」+ 「タイトル」+「会議の名前」+「本（雑誌、論文）の情報」+「会議（発表）の時間」+「会議の場所」<br>
+                            <br>
+                            例: <br>
+                            作者 = 出海 絢子, 三木 良介, 宮崎 佳典, 厨子 光政, 法月 健 <br>
+                            タイトル = 英単語並び替え問題におけるマウス軌跡再現および迷い抽出を志向した履歴検索Webアプリケーション開発 <br>
+                            会議の名前 = 大学英語教育学会（JACET）関東支部大会 <br>
+                            本（雑誌、論文）の情 = 日本e-Learning学会論文誌, Vol.16, pp. 73-82 (2016) <br>
+                            会議の場所 = 高麗大学（大韓民国ソウル市）<br>
+                            会議（発表）の時間 = 2017.2<br>
+                            <br>
+                            結果:<br>
+                            出海 絢子, 三木 良介, 宮崎 佳典, 厨子 光政, 法月 健, 英単語並び替え問題におけるマウス軌跡再現および迷い抽出を志向した履歴検索Webアプリケーション開発, 大学英語教育学会（JACET）関東支部大会, 日本e-Learning学会論文誌, Vol.16, pp. 73-82 (2016). 於 高麗大学（大韓民国ソウル市, 2017.2<br>
+                        </span>
                         @Html.ValidationMessageFor(model => model.IsDetailed, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -124,6 +145,9 @@
                     <div class="col-sm-6">
                         @Html.EditorFor(model => model.Editors, new { htmlAttributes = new { @class = "form-control", @placeholder = "" } })
                         @Html.ValidationMessageFor(model => model.Editors, "", new { @class = "text-danger" })
+                        <span class="help-block">
+                            上の例を参考して、作者をコンマで分割してください
+                        </span>
                     </div>
                 </div>
 

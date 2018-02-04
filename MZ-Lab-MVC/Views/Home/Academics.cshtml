@@ -37,13 +37,19 @@
                             </div>
                             <div class="single-academic-card-body margin-ver-5px">
                                 <div class="center-img-container">
-                                    <img class="center-img-object" src="~/img/img-default/default1.jpg" alt="">
-                                    <img class="center-img-object" src="@(academicArticle.CoverImgUrl==""?Url.Content("~/img/img-default/default1.jpg"):academicArticle.CoverImgUrl)" alt="">
+                                    <img class="center-img-object" src="@(academicArticle.CoverImgUrl == "" ? Url.Content("~/img/img-default/default1.jpg") : Url.Content(academicArticle.CoverImgUrl))" alt="">
                                 </div>
                             </div>
                             <div class="single-academic-card-footer margin-top-30px">
                                 <big>
-                                    @(academicArticle.FullDescription == ""?academicArticle.Title: academicArticle.FullDescription)
+                                    @if (academicArticle.IsDetailed)
+                                    {
+                                        @(academicArticle.Editors + " ," + academicArticle.Title + " ," + academicArticle.EventName + " ," + academicArticle.BookInfo + ". 於 " + academicArticle.EventPlace + ", " + academicArticle.PublishTime)
+                                    }
+                                    else
+                                    {
+                                        @(academicArticle.FullDescription == ""?academicArticle.Title: academicArticle.FullDescription)
+                                    }
                                 </big>
                             </div>
                         </div>

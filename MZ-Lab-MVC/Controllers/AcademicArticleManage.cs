@@ -9,6 +9,7 @@ using MZ_Lab_MVC.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 using Microsoft.AspNetCore.Authorization;
+using System.IO;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -90,9 +91,19 @@ namespace MZ_Lab_MVC.Controllers
         {
             if(ModelState.IsValid)
             {
+                Guid guid = Guid.NewGuid();
+
+                if (model.CoverImg != null)
+                {
+                    var path = Path.Combine(
+                        Directory.GetCurrentDirectory(), "wwwroot" + "/img/covers/",
+                        guid.ToString() + "-" + model.CoverImg.FileName);
+                    model.CoverImg.CopyTo(new FileStream(path, FileMode.Create));
+                }
+
                 var academicArticle = new AcademicArticle
                 {
-                    CoverImgUrl = model.CoverImgUrl,
+                    CoverImgUrl = model.CoverImg == null ? "" : "~" + "/img/covers/" + guid.ToString() + "-" + model.CoverImg.FileName,
                     FullDescription = model.FullDescription,
                     PostTime = model.PostTime,
                     Remark = model.Remark,
@@ -155,10 +166,20 @@ namespace MZ_Lab_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                Guid guid = Guid.NewGuid();
+
+                if (model.CoverImg != null)
+                {
+                    var path = Path.Combine(
+                        Directory.GetCurrentDirectory(), "wwwroot" + "/img/covers/",
+                        guid.ToString() + "-" + model.CoverImg.FileName);
+                    model.CoverImg.CopyTo(new FileStream(path, FileMode.Create));
+                }
+
                 var academicArticle = db.AcademicArticles.Find(model.Id);
 
                 academicArticle.Id = model.Id;
-                academicArticle.CoverImgUrl = model.CoverImgUrl;
+                academicArticle.CoverImgUrl = model.CoverImg == null ? "" : "~" + "/img/covers/" + guid.ToString() + "-" + model.CoverImg.FileName;
                 academicArticle.FullDescription = model.FullDescription;
                 academicArticle.PostTime = model.PostTime;
                 academicArticle.Remark = model.Remark;

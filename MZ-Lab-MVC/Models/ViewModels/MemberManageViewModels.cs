@@ -47,7 +47,6 @@ namespace MZ_Lab_MVC.ViewModels
         public string GivenNamePronunciation { get; set; }
         [Display(Name = "画像/Url")]
         public string AvatarUrl { get; set; }
-        public IFormFile AvatarImg { get; set; }
         [Display(Name = "専門")]
         public string Major { get; set; }
         [Display(Name = "学年")]
@@ -103,7 +102,6 @@ namespace MZ_Lab_MVC.ViewModels
         public string GivenNamePronunciation { get; set; }
         [Display(Name = "画像/Url")]
         public string AvatarUrl { get; set; }
-        public IFormFile AvatarImg { get; set; }
         [Display(Name = "専門")]
         public string Major { get; set; }
         [Display(Name = "学年")]

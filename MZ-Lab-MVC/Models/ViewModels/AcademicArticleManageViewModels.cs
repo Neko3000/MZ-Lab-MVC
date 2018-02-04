@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using MZ_Lab_MVC.Models;
 
 namespace MZ_Lab_MVC.ViewModels
@@ -11,6 +12,7 @@ namespace MZ_Lab_MVC.ViewModels
     {
         [Display(Name = "画像/Url")]
         public string CoverImgUrl { get; set; }
+        public IFormFile CoverImg { get; set; }
         [Display(Name = "内容")]
         public string FullDescription { get; set; }
         [Display(Name = "公開時間")]
@@ -76,6 +78,7 @@ namespace MZ_Lab_MVC.ViewModels
         public int Id { get; set; }
         [Display(Name = "画像/Url")]
         public string CoverImgUrl { get; set; }
+        public IFormFile CoverImg { get; set; }
         [Display(Name = "内容")]
         public string FullDescription { get; set; }
         [Display(Name = "公開時間")]
