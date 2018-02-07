@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-xs-6 col-md-6 single-personal-card-footer padding-vertical-15px">
                                 <small>
-                                @if(member.Introduction != "")
+                                @if(!member.Introduction.IsNullOrEmpty())
                                 {
                                     @Html.Raw(member.Introduction.Replace(Environment.NewLine, "<br/>"))
                                 }                            
