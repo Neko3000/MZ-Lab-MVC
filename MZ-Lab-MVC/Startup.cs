@@ -81,7 +81,7 @@ namespace MZ_Lab_MVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "mzlab/{controller=Home}/{action=Index}/{id?}");
             });
 
             //initialize database
