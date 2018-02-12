@@ -66,6 +66,8 @@ namespace MZ_Lab_MVC
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            //ProxyPass?
+            //app.UsePathBase("/mzlab");
             app.UseStaticFiles();
 
             //the Authentication needs ForwardedHeaders middle-ware to run
@@ -79,7 +81,7 @@ namespace MZ_Lab_MVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "mzlab/{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
 
             //initialize database

@@ -17,7 +17,7 @@ using MZ_Lab_MVC.Services;
 namespace MZ_Lab_MVC.Controllers
 {
     [Authorize]
-    [Route("[controller]/[action]")]
+    //[Route("[controller]/[action]")]
     public class ManageController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
