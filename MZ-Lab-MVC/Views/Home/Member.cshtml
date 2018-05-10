@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-md-3 single-personal-card-header center-container padding-vertical-15px">
                                 <div class="mask-circle center-object">
-                                    <img src="/mzlab/img/avatars/thumbnail_miya.png" alt="">
+                                    <img src="~/img/avatars/thumbnail_miya.png" alt="">
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-3 single-personal-card-body padding-vertical-15px">
@@ -47,10 +47,17 @@
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-3 single-personal-card-body padding-vertical-15px">
-                            <pre>@member.FamilyNamePronunciation @member.GivenNamePronunciation</pre>
-                            <a href="@member.Remak">                                                     
+                            <pre>@member.FamilyNamePronunciation @member.GivenNamePronunciation</pre>                          
+                            @if(member.Remark!="")
+                            {
+                                <a href="@(member.Remark)">                                                     
+                                    <h4>@member.FamilyName @member.GivenName</h4>
+                                </a>
+                            }
+                            else
+                            {
                                 <h4>@member.FamilyName @member.GivenName</h4>
-                            </a>
+                            }
                                 <small>@member.Major, @member.Grade</small>
                             </div>
                             <div class="col-xs-6 col-md-6 single-personal-card-footer padding-vertical-15px">
