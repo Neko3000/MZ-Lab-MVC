@@ -34,9 +34,7 @@
                 {
                     var academicArticle = Model.AcademicArticles.ToList()[i];
 
-                    @{
-                        Random rnd = new Random();
-                    }
+                    Random rnd = new Random();
 
                     @if (academicArticle.PostTime.Year.ToString() == year)
                     {
