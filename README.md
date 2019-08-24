@@ -36,6 +36,7 @@ Build up environments to deploy it.
 You could find its UIKit and pages on [MZ-Lab-MVC on Behance](https://www.behance.net/gallery/84587603/MZ-Lab).
 
 ## Dependencies
+[Bracket](https://themeforest.net/item/bracket-responsive-bootstrap-3-admin-template/6894362/) is used to build up Front-End interface.</br>
 
 Packages have been included:
 
