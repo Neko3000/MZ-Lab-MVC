@@ -1,5 +1,5 @@
 # MZ-Lab-MVC
-![License: MIT](https://img.shields.io/github/license/Neko3000/MZ-Lab-MVC)
+![License: MIT](https://img.shields.io/github/license/Neko3000/mz-lab-mvc)
 ![Platforms: Windows | Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey)
 ![Language: C#](https://img.shields.io/badge/language-C%23-blue)
 ![Version: v0.80](https://img.shields.io/badge/version-v0.80-lightgrey)
